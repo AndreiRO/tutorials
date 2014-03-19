@@ -21,15 +21,17 @@
         $a = 1;
         echo $a;
         separator();
+
         echo "Interpolating $a";
         separator();
-        echo "Some other interpolation {$a}";
 
+        echo "Some other interpolation {$a}";
         separator();
+
         $b = 2;
-        echo $a + $b;
-    
+        echo $a + $b;    
         separator();
+
         # pointer like
         $c = 'a';
         echo "The value of a: {${$c}}";
@@ -118,7 +120,18 @@
         echo strval(1.2);
         separator();
 
-        
+        $list = array();
+        $list[] = "First value";
+        $list[] = "Second value";
+        $list['third'] = "Third value";
+        $list[] = "Fourth value";
+        foreach($list as $key => $value) {
+            echo "$key => $value\n<br>";
+        }
+        separator()
+
+
+             
     ?>
 
 </html>
