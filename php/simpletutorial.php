@@ -252,6 +252,53 @@
 
         echo sum(1,2,3), "\n<br>";
         echo sum(), "\n<br>";
+        separator();
+
+        class Person {
+            private $name;
+
+            public function __construct($name) {
+                $this->name = $name;
+            }
+
+            public function __destruct() {
+                echo "Destructing parent";
+            }
+            public function getName() {
+                return $this->name;
+            }
+
+            public function setName($name) {
+                $this->name = $name;
+            }
+        }
+
+        class Manager extends Person {
+            private $department;
+
+            public function __construct($name, $dept) {
+                parent::__construct($name);
+                $this->department = $dept;
+            }
+
+            public function getDepartment() {
+                return $this->department;
+            }
+
+            public function setDepartment($dept) {
+                $this->department - $dept;
+            }
+
+        }
+
+
+        $p = new Person("John");
+        echo $p->getName();
+        separator();
+
+        $m = new Manager("Manny", 1);
+        echo $m->getName(), " ", $m->getDepartment();
+        separator();
     ?>
 
 
